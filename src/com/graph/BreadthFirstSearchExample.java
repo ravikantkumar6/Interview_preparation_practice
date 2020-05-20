@@ -1,0 +1,79 @@
+package com.graph;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+public class BreadthFirstSearchExample {
+	
+	static class Node{
+		int data;
+		boolean visited;
+		List<Node> neighbours;
+		
+		Node(int data){
+			this.data = data;
+			this.neighbours = new ArrayList<Node>();
+		}
+		
+		public void addNeighbour(Node node) {
+			this.neighbours.add(node);
+		}
+
+		public List<Node> getNeighbours() {
+			return neighbours;
+		}
+
+		public void setNeighbours(List<Node> neighbours) {
+			this.neighbours = neighbours;
+		}
+		
+	}
+	
+	public void bfs(Node node) {
+		if(node == null) return;
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.add(node);
+		while(!queue.isEmpty()) {
+			Node n = queue.poll();
+			System.out.print(n.data+",");
+			n.visited = true;
+			List<Node> nodeList = n.getNeighbours();
+		    for(Node neighbour:nodeList) {
+		    	if(neighbour != null && !neighbour.visited) {
+		    		queue.add(neighbour);
+		    		neighbour.visited = true;
+		    	}
+		    }
+		}
+	}
+	
+	public static void main(String arg[])
+	{
+ 
+		Node node40 =new Node(40);
+		Node node10 =new Node(10);
+		Node node20 =new Node(20);
+		Node node30 =new Node(30);
+		Node node60 =new Node(60);
+		Node node50 =new Node(50);
+		Node node70 =new Node(70);
+ 
+		node40.addNeighbour(node10);
+		node40.addNeighbour(node20);
+		node10.addNeighbour(node30);
+		node20.addNeighbour(node10);
+		node20.addNeighbour(node30);
+		node20.addNeighbour(node60);
+		node20.addNeighbour(node50);
+		node30.addNeighbour(node60);
+		node60.addNeighbour(node70);
+		node50.addNeighbour(node70);
+		System.out.println("The BFS traversal of the graph is ");
+		BreadthFirstSearchExample bfsExample = new BreadthFirstSearchExample();
+		bfsExample.bfs(node40);
+ 
+	}
+
+}
