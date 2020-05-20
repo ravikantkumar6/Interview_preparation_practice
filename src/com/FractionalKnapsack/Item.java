@@ -1,53 +1,53 @@
 package com.FractionalKnapsack;
 
 public class Item {
-	
-	private int index;
-	private int value;
-	private int weight;
-	private double ratio;
-	
-	public Item(int index,int value,int weight) {
-		this.index = index;
-		this.value = value;
-		this.weight = weight;
-		ratio = value * 1.0/weight;
-	}
 
-	public int getIndex() {
-		return index;
-	}
+    private int index;
+    private int value;
+    private int weight;
+    private double ratio;
 
-	public void setIndex(int index) {
-		this.index = index;
-	}
+    public Item(int index, int value, int weight) {
+        this.index = index;
+        this.value = value;
+        this.weight = weight;
+        ratio = value * 1.0 / weight;
+    }
 
-	public int getValue() {
-		return value;
-	}
+    public int getIndex() {
+        return index;
+    }
 
-	public void setValue(int value) {
-		this.value = value;
-	}
+    public void setIndex(int index) {
+        this.index = index;
+    }
 
-	public int getWeight() {
-		return weight;
-	}
+    public int getValue() {
+        return value;
+    }
 
-	public void setWeight(int weight) {
-		this.weight = weight;
-	}
+    public void setValue(int value) {
+        this.value = value;
+    }
 
-	public double getRatio() {
-		return ratio;
-	}
+    public int getWeight() {
+        return weight;
+    }
 
-	public void setRatio(double ratio) {
-		this.ratio = ratio;
-	}
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 
-	@Override
-	public String toString() {
-		return "Item index=" + index + ", value=" + value + ", weight=" + weight + ", ratio=" + ratio + "]";
-	}
+    public double getRatio() {
+        return ratio;
+    }
+
+    public void setRatio(double ratio) {
+        this.ratio = ratio;
+    }
+
+    @Override
+    public String toString() {
+        return "Item index=" + index + ", value=" + value + ", weight=" + weight + ", ratio=" + ratio + "]";
+    }
 }

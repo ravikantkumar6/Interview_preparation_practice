@@ -1,9 +1,9 @@
 package com.designpattern.iterator;
 
 public interface ChannelIterator {
-	
-	public boolean hasNext();
-	
-	public Channel next();
+
+    boolean hasNext();
+
+    Channel next();
 
 }
